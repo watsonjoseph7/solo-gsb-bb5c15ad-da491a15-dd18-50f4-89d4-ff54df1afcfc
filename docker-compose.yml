@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      # SQLite 数据库文件位置（容器内）
+      - DB_PATH=/app/data/workbench.db
+    volumes:
+      # 持久化数据库，容器重建后数据不丢
+      - workbench-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  workbench-data:

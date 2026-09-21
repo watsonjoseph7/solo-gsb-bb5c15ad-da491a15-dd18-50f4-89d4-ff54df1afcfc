@@ -1,0 +1,19 @@
+{
+  "name": "clause-renumber-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "description": "合同条款重编号工作台：解析“第X条”标题与引用，批量改号、预览、原子应用、撤销与导出",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "build": "npm run build -w server && npm run build -w client",
+    "start": "node server/dist/index.js",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
